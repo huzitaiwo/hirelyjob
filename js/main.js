@@ -73,7 +73,7 @@
   }
 
   /* ---------- Search: don't send empty params ---------- */
-  const search = document.querySelector('form[role="search"]');
+  const search = document.querySelector('form[role="search"]:not([data-live])');
   if (search) {
     search.addEventListener("submit", () => {
       search.querySelectorAll("input, select").forEach((field) => {

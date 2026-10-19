@@ -63,77 +63,6 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Search bar (reused on /jobs via .search) */
-.search {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  max-width: 40rem;
-  margin-top: 2rem;
-  padding: 0.5rem;
-  background: var(--surface);
-  border-radius: var(--r-md);
-  color: var(--ink);
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.45);
-}
-.search__field {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  min-height: 2.9rem;
-  color: var(--ink-soft);
-}
-.search__field--query {
-  flex: 1 1 auto;
-  min-width: 0;
-  padding-inline: 1rem;
-  background: var(--field);
-  border-radius: var(--r-sm);
-}
-.search__field--query:focus-within {
-  box-shadow: 0 0 0 2px var(--focus);
-}
-.search__field input {
-  width: 100%;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  font-size: var(--fs-sm);
-  color: var(--ink);
-}
-.search__field input::placeholder {
-  color: var(--ink-mute);
-}
-.search__field--location {
-  position: relative;
-  padding-inline: 1rem 0.75rem;
-  border-left: 1px solid var(--border);
-  border-radius: 0;
-  font-size: var(--fs-sm);
-  font-weight: 500;
-}
-.search__field--location select {
-  appearance: none;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  padding-right: 1.4rem;
-  font-size: var(--fs-sm);
-  color: var(--ink-soft);
-  cursor: pointer;
-}
-.search__field--location .icon--chevron {
-  position: absolute;
-  right: 0.75rem;
-  pointer-events: none;
-  font-size: 0.8rem;
-}
-.search__submit {
-  min-height: 2.9rem;
-  border-radius: var(--r-sm);
-  font-size: var(--fs-sm);
-}
-
 .checks {
   display: flex;
   flex-wrap: wrap;
@@ -390,16 +319,6 @@
 }
 
 @media (max-width: 40rem) {
-  .search {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .search__field--location {
-    display: none;
-  }
-  .search__submit {
-    width: 100%;
-  }
   .glass-card__tiles {
     grid-template-columns: 1fr;
   }

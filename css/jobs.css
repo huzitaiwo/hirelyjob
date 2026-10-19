@@ -1,0 +1,146 @@
+/* ==========================================================
+   JOBS — layout only. Components are shared.
+   ========================================================== */
+
+.eyebrow--plain {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.jobs {
+  padding-block: clamp(1.5rem, 4vw, 2rem) clamp(3rem, 7vw, 5rem);
+}
+
+.jobs__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 15.5rem) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+/* Filters */
+.filters {
+  padding: 1.25rem 1.35rem 1.5rem;
+  border-radius: var(--r-lg);
+  box-shadow: none;
+}
+.filters:hover {
+  transform: none;
+}
+.filters__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+.filters__title {
+  font-size: var(--fs-body);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.filters__reset {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--forest-900);
+  border-radius: 6px;
+  transition: opacity var(--t-fast);
+}
+.filters__reset:hover {
+  opacity: 0.65;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.filters__group {
+  padding-block: 1rem;
+  border-top: 1px solid var(--border);
+}
+.filters__group:last-child {
+  padding-bottom: 0;
+}
+
+/* Results */
+.results {
+  display: grid;
+  gap: 1rem;
+}
+.results__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.results__title {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.results__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+.results__grid > li {
+  display: flex;
+}
+.results__grid > li .job-card {
+  width: 100%;
+}
+
+/* Sort control */
+.sort {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+.sort select {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0.25rem 1.4rem 0.25rem 0;
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--forest-900);
+  cursor: pointer;
+  border-radius: 6px;
+}
+.sort .icon--chevron {
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+  font-size: 0.85rem;
+}
+
+/* Card entrance when the list re-renders */
+.results__grid > li {
+  animation: rise var(--t-slow) var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.results__grid .empty-state {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+@media (max-width: 60rem) {
+  .jobs__layout {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 45rem) {
+  .results__grid {
+    grid-template-columns: 1fr;
+  }
+}
