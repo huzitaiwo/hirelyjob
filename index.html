@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hirely - Find the right opportunity. Hire the right people.</title>
+    <meta
+      name="description"
+      content="Hirely is the deliberate marketplace for people and teams choosing what comes next. Clearer opportunities. Better-fit conversations."
+    />
+    <meta name="theme-color" content="#183a2e" />
+    <link rel="icon" type="image/png" href="/assets/icons/hirelyjob.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hirely — Work that moves with you." />
+    <meta
+      property="og:description"
+      content="The deliberate marketplace for people and teams choosing what comes next."
+    />
+    <meta property="og:image" content="/assets/icons/hirelyjob.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <!-- SVG icon sprite (paste this same block into every page) -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="0"
+      height="0"
+      style="position: absolute"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </symbol>
+        <symbol id="i-search" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </symbol>
+        <symbol id="i-map-pin" viewBox="0 0 24 24">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+          <circle cx="12" cy="10" r="3" />
+        </symbol>
+        <symbol id="i-chevron-down" viewBox="0 0 24 24">
+          <path d="m6 9 6 6 6-6" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="M20 6 9 17l-5-5" />
+        </symbol>
+        <symbol id="i-compass" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12Z" />
+        </symbol>
+        <symbol id="i-user" viewBox="0 0 24 24">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </symbol>
+        <symbol id="i-building" viewBox="0 0 24 24">
+          <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+          <path
+            d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2M10 6h4M10 10h4M10 14h4M10 18h4"
+          />
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24">
+          <path
+            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+          />
+        </symbol>
+        <symbol id="i-sparkles" viewBox="0 0 24 24">
+          <path
+            d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0L14.06 8.5a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"
+          />
+        </symbol>
+        <symbol id="i-badge-check" viewBox="0 0 24 24">
+          <path
+            d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+          />
+          <path d="m9 12 2 2 4-4" />
+        </symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </symbol>
+        <symbol id="i-x" viewBox="0 0 24 24">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========== HEADER (shared component) ========== -->
+    <header class="site-header site-header--dark" id="site-header">
+      <div class="container site-header__inner">
+        <a class="logo" href="/" aria-label="Hirely home">
+          <span class="logo__mark" aria-hidden="true">h.</span>
+          <span class="logo__word">hirely</span>
+        </a>
+
+        <nav class="site-nav" id="site-menu" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a href="/jobs">Find work</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#employers">For employers</a></li>
+            <li class="site-nav__mobile-only">
+              <a href="/join?mode=signin">Sign in</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="site-header__actions">
+          <a class="site-header__signin" href="/join?mode=signin">Sign in</a>
+          <a class="btn btn--lime btn--sm" href="/join">
+            Get started
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-arrow-right" />
+            </svg>
+          </a>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-menu"
+            aria-label="Open menu"
+          >
+            <svg class="icon icon--menu" aria-hidden="true">
+              <use href="#i-menu" />
+            </svg>
+            <svg class="icon icon--close" aria-hidden="true">
+              <use href="#i-x" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ========== HERO ========== -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="pill reveal">
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-sparkles" />
+              </svg>
+              A more considered way to hire
+            </p>
+
+            <h1 class="hero__title reveal" id="hero-title">
+              Work that<br />moves <span class="accent">with you.</span>
+            </h1>
+
+            <p class="hero__lead reveal">
+              Hirely is the deliberate marketplace for people and teams choosing
+              what comes next. Clearer opportunities. Better-fit conversations.
+            </p>
+
+            <form
+              class="search reveal"
+              action="/jobs"
+              method="get"
+              role="search"
+              aria-label="Search roles"
+            >
+              <div class="search__field search__field--query">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-search" />
+                </svg>
+                <label class="sr-only" for="hero-q"
+                  >Role, skill, or company</label
+                >
+                <input
+                  id="hero-q"
+                  name="q"
+                  type="search"
+                  placeholder="Role, skill, or company"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="search__field search__field--location">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-map-pin" />
+                </svg>
+                <label class="sr-only" for="hero-loc">Location</label>
+                <select id="hero-loc" name="location">
+                  <option value="">Anywhere</option>
+                  <option value="remote">Remote</option>
+                  <option value="New York, NY">New York, NY</option>
+                  <option value="Austin, TX">Austin, TX</option>
+                </select>
+                <svg class="icon icon--chevron" aria-hidden="true">
+                  <use href="#i-chevron-down" />
+                </svg>
+              </div>
+
+              <button class="btn btn--dark search__submit" type="submit">
+                Search roles
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow-right" />
+                </svg>
+              </button>
+            </form>
+
+            <ul class="checks reveal">
+              <li>
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-check" /></svg
+                >Thoughtful roles, not noise
+              </li>
+              <li>
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-check" /></svg
+                >Teams that show their work
+              </li>
+            </ul>
+          </div>
+
+          <aside class="glass-card reveal" aria-labelledby="preview-title">
+            <div class="glass-card__top">
+              <p class="eyebrow eyebrow--onDark">Featured preview</p>
+              <span class="icon-dot" aria-hidden="true"
+                ><svg class="icon"><use href="#i-compass" /></svg
+              ></span>
+            </div>
+            <h2 class="glass-card__title" id="preview-title">
+              Make the next step feel intentional.
+            </h2>
+            <p class="glass-card__text">
+              Explore roles with context, then show up to the conversation as
+              your whole professional self.
+            </p>
+            <div class="glass-card__tiles">
+              <div class="tile">
+                <p class="eyebrow eyebrow--onDark">For talent</p>
+                <p class="tile__title">Discover with clarity</p>
+              </div>
+              <div class="tile">
+                <p class="eyebrow eyebrow--onDark">For teams</p>
+                <p class="tile__title">Hire with intent</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ========== FEATURED ROLES ========== -->
+      <section class="section" aria-labelledby="roles-title">
+        <div class="container">
+          <header class="section-head">
+            <div>
+              <p class="eyebrow">A calmer search</p>
+              <h2 class="section-title" id="roles-title">
+                Opportunities with enough detail to decide if they deserve your
+                attention.
+              </h2>
+            </div>
+            <a class="link-arrow" href="/jobs">
+              Explore all roles
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-arrow-right" />
+              </svg>
+            </a>
+          </header>
+
+          <ul class="grid grid--3 job-list">
+            <li class="reveal">
+              <article class="card job-card">
+                <div class="job-card__top">
+                  <div>
+                    <p class="eyebrow eyebrow--company">Aster &amp; Field</p>
+                    <h3 class="job-card__title">
+                      <a class="stretched-link" href="/jobs"
+                        >Senior Product Designer</a
+                      >
+                    </h3>
+                  </div>
+                  <span class="icon-btn" aria-hidden="true"
+                    ><svg class="icon"><use href="#i-arrow-right" /></svg
+                  ></span>
+                </div>
+                <p class="job-card__desc">
+                  Shape thoughtful digital tools for people building a better
+                  financial life.
+                </p>
+                <ul class="tags">
+                  <li class="tag">Hybrid</li>
+                  <li class="tag">Full-Time</li>
+                  <li class="tag tag--warm">Preview</li>
+                </ul>
+                <footer class="job-card__foot">
+                  <span class="meta"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="#i-map-pin" /></svg
+                    >New York, NY</span
+                  >
+                  <span class="salary">$145k–$170k</span>
+                </footer>
+              </article>
+            </li>
+
+            <li class="reveal">
+              <article class="card job-card">
+                <div class="job-card__top">
+                  <div>
+                    <p class="eyebrow eyebrow--company">Kiteworks</p>
+                    <h3 class="job-card__title">
+                      <a class="stretched-link" href="/jobs"
+                        >Platform Engineer</a
+                      >
+                    </h3>
+                  </div>
+                  <span class="icon-btn" aria-hidden="true"
+                    ><svg class="icon"><use href="#i-arrow-right" /></svg
+                  ></span>
+                </div>
+                <p class="job-card__desc">
+                  Build the reliable systems that let ambitious teams move with
+                  confidence.
+                </p>
+                <ul class="tags">
+                  <li class="tag">Remote</li>
+                  <li class="tag">Full-Time</li>
+                  <li class="tag tag--warm">Preview</li>
+                </ul>
+                <footer class="job-card__foot">
+                  <span class="meta"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="#i-map-pin" /></svg
+                    >Remote — US</span
+                  >
+                  <span class="salary">$155k–$190k</span>
+                </footer>
+              </article>
+            </li>
+
+            <li class="reveal">
+              <article class="card job-card">
+                <div class="job-card__top">
+                  <div>
+                    <p class="eyebrow eyebrow--company">Morrow Studio</p>
+                    <h3 class="job-card__title">
+                      <a class="stretched-link" href="/jobs"
+                        >Lifecycle Growth Lead</a
+                      >
+                    </h3>
+                  </div>
+                  <span class="icon-btn" aria-hidden="true"
+                    ><svg class="icon"><use href="#i-arrow-right" /></svg
+                  ></span>
+                </div>
+                <p class="job-card__desc">
+                  Make every customer moment clearer, more useful, and more
+                  human.
+                </p>
+                <ul class="tags">
+                  <li class="tag">Hybrid</li>
+                  <li class="tag">Full-Time</li>
+                  <li class="tag tag--warm">Preview</li>
+                </ul>
+                <footer class="job-card__foot">
+                  <span class="meta"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="#i-map-pin" /></svg
+                    >Austin, TX</span
+                  >
+                  <span class="salary">$125k–$150k</span>
+                </footer>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== HOW IT WORKS ========== -->
+      <section
+        class="section section--mint"
+        id="how-it-works"
+        aria-labelledby="how-title"
+      >
+        <div class="container how">
+          <div class="how__intro reveal">
+            <p class="eyebrow">How Hirely works</p>
+            <h2 class="section-title section-title--sm" id="how-title">
+              Less searching. More signal.
+            </h2>
+            <p class="how__text">
+              We designed each step to replace unnecessary back-and-forth with
+              the context people need to make a considered move.
+            </p>
+            <a class="btn btn--outline btn--sm" href="/join">
+              Choose your path
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-arrow-right" />
+              </svg>
+            </a>
+          </div>
+
+          <ol class="grid grid--3 steps">
+            <li class="card step reveal">
+              <span class="step__num">01</span>
+              <span class="icon-dot icon-dot--soft" aria-hidden="true"
+                ><svg class="icon"><use href="#i-compass" /></svg
+              ></span>
+              <h3 class="step__title">Discover</h3>
+              <p class="step__text">
+                Start with a focused search and detail that answers the
+                important questions.
+              </p>
+            </li>
+            <li class="card step reveal">
+              <span class="step__num">02</span>
+              <span class="icon-dot icon-dot--soft" aria-hidden="true"
+                ><svg class="icon"><use href="#i-user" /></svg
+              ></span>
+              <h3 class="step__title">Show your fit</h3>
+              <p class="step__text">
+                Share the work, skills, and decisions behind your experience.
+              </p>
+            </li>
+            <li class="card step reveal">
+              <span class="step__num">03</span>
+              <span class="icon-dot icon-dot--soft" aria-hidden="true"
+                ><svg class="icon"><use href="#i-heart" /></svg
+              ></span>
+              <h3 class="step__title">Move forward</h3>
+              <p class="step__text">
+                Keep each application, conversation, and decision in one calm
+                place.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========== AUDIENCES ========== -->
+      <section class="section" id="employers" aria-label="Choose your path">
+        <div class="container grid grid--2 audience">
+          <article class="panel panel--sand reveal">
+            <span class="icon-tile" aria-hidden="true"
+              ><svg class="icon"><use href="#i-user" /></svg
+            ></span>
+            <p class="eyebrow">For candidates</p>
+            <h2 class="panel__title">
+              Keep your search grounded in what matters to you.
+            </h2>
+            <p class="panel__text">
+              Build a profile that carries your experience with care, then track
+              each role without losing the thread.
+            </p>
+            <a class="btn btn--dark btn--sm" href="/join?role=candidate">
+              Create candidate profile
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-arrow-right" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="panel panel--sage reveal">
+            <span class="icon-tile" aria-hidden="true"
+              ><svg class="icon"><use href="#i-building" /></svg
+            ></span>
+            <p class="eyebrow">For employers</p>
+            <h2 class="panel__title">
+              Build a hiring process candidates can trust.
+            </h2>
+            <p class="panel__text">
+              Write clear roles, organize the right signals, and move every
+              person through a transparent process.
+            </p>
+            <a class="btn btn--outline btn--sm" href="/join?role=employer">
+              Open employer workspace
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-arrow-right" />
+              </svg>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========== CTA BAND ========== -->
+      <section class="cta-band reveal" aria-labelledby="cta-title">
+        <span class="cta-band__icon" aria-hidden="true"
+          ><svg class="icon"><use href="#i-badge-check" /></svg
+        ></span>
+        <h2 class="cta-band__title" id="cta-title">
+          Good hiring starts with a clearer invitation.
+        </h2>
+        <p class="cta-band__text">
+          Whether you are looking for a role or building a team, Hirely gives
+          the process a more intentional place to happen.
+        </p>
+        <a class="btn btn--lime btn--sm" href="/join">
+          Start with Hirely
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-arrow-right" />
+          </svg>
+        </a>
+      </section>
+
+      <!-- ========== PLATFORM SIGNALS ========== -->
+      <section
+        class="section section--mint section--flush"
+        aria-labelledby="signals-title"
+      >
+        <div class="container">
+          <header class="section-head section-head--end">
+            <div>
+              <p class="eyebrow">Platform signals</p>
+              <h2 class="section-title section-title--sm" id="signals-title">
+                A hiring process with fewer loose ends.
+              </h2>
+            </div>
+            <p class="section-head__aside">
+              The product is organized around the points where more context
+              creates a better decision.
+            </p>
+          </header>
+
+          <ul class="grid grid--3">
+            <li class="card signal reveal">
+              <p class="signal__num">03</p>
+              <h3 class="signal__title">private workspaces</h3>
+              <p class="signal__text">
+                Candidate, employer, and administrator access are intentionally
+                separated.
+              </p>
+            </li>
+            <li class="card signal reveal">
+              <p class="signal__num">02</p>
+              <h3 class="signal__title">review gates</h3>
+              <p class="signal__text">
+                Employer submission and platform approval keep public roles
+                intentional.
+              </p>
+            </li>
+            <li class="card signal reveal">
+              <p class="signal__num">01</p>
+              <h3 class="signal__title">shared application thread</h3>
+              <p class="signal__text">
+                Every application has one clear status from submission to
+                decision.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER (shared component) ========== -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="logo logo--light" href="/" aria-label="Hirely home">
+            <span class="logo__mark" aria-hidden="true">h.</span>
+            <span class="logo__word">hirely</span>
+          </a>
+          <p>Find the right opportunity. Hire the right people.</p>
+        </div>
+        <nav aria-label="Footer">
+          <ul class="site-footer__links">
+            <li><a href="/jobs">Find work</a></li>
+            <li><a href="#employers">For teams</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>
