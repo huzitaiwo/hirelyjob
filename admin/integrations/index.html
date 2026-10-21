@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Integration settings — Hirely</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="/assets/icons/hirelyjob.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body class="app">
+    <a class="skip-link" href="#app-main">Skip to content</a>
+    <div class="app-shell">
+      <aside class="app-sidebar" id="app-sidebar"></aside>
+      <div class="app-body">
+        <header class="app-topbar" id="app-topbar"></header>
+
+        <main class="app-main" id="app-main" aria-busy="true">
+          <header class="page-intro">
+            <p class="page-intro__eyebrow">Platform configuration</p>
+            <h2 class="page-intro__title">Connected integrations</h2>
+            <p class="page-intro__lead">
+              Configure providers from this administrator-only workspace. Values
+              are encrypted before storage and never returned to the browser
+              after submission. Empty fields preserve existing values.
+            </p>
+          </header>
+
+          <div class="integrations" id="integrations"></div>
+
+          <aside class="callout" aria-labelledby="security-title">
+            <svg class="icon" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#i-key" />
+            </svg>
+            <div>
+              <h2 class="callout__title" id="security-title">
+                Security boundary
+              </h2>
+              <p class="callout__text">
+                Only administrator accounts can open this page or submit
+                configuration updates. Stored values are encrypted with the
+                server secret; readiness indicators show only whether the
+                required configuration is complete.
+              </p>
+            </div>
+          </aside>
+        </main>
+      </div>
+    </div>
+    <div class="app-scrim" id="app-scrim"></div>
+
+    <script type="module" src="/js/admin/integrations.js"></script>
+  </body>
+</html>
