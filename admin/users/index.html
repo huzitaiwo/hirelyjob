@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User management — Hirely</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="/assets/icons/hirelyjob.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body class="app">
+    <a class="skip-link" href="#app-main">Skip to content</a>
+    <div class="app-shell">
+      <aside class="app-sidebar" id="app-sidebar"></aside>
+      <div class="app-body">
+        <header class="app-topbar" id="app-topbar"></header>
+
+        <main class="app-main" id="app-main" aria-busy="true">
+          <header class="page-intro">
+            <p class="page-intro__eyebrow">Access overview</p>
+            <h2 class="page-intro__title">People on the platform.</h2>
+            <p class="page-intro__lead">
+              Roles determine which workspace and server operations each account
+              can access.
+            </p>
+          </header>
+
+          <section class="table-card" aria-label="Accounts">
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Account</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Joined</th>
+                  </tr>
+                </thead>
+                <tbody id="users-body" aria-live="polite">
+                  <tr>
+                    <td colspan="3">
+                      <span class="skeleton">Loading people…</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div class="app-scrim" id="app-scrim"></div>
+
+    <script type="module" src="/js/admin/users.js"></script>
+  </body>
+</html>
