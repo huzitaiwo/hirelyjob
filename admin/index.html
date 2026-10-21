@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Platform overview — Hirely</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="/assets/icons/hirelyjob.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body class="app">
+    <a class="skip-link" href="#app-main">Skip to content</a>
+    <div class="app-shell">
+      <aside class="app-sidebar" id="app-sidebar"></aside>
+      <div class="app-body">
+        <header class="app-topbar" id="app-topbar"></header>
+
+        <main class="app-main" id="app-main" aria-busy="true">
+          <div class="overview-top">
+            <section class="hero-card" aria-labelledby="stewardship-title">
+              <p class="eyebrow eyebrow--lime">Platform stewardship</p>
+              <h2 class="hero-card__title" id="stewardship-title">
+                Keep the marketplace clear, safe, and useful.
+              </h2>
+              <p class="hero-card__text">
+                Review new role listings before publishing and keep a close view
+                of the people and activity shaping the platform.
+              </p>
+              <a class="btn btn--lime btn--sm" href="/admin/moderation">
+                Review moderation queue
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons/sprite.svg#i-arrow-right" />
+                </svg>
+              </a>
+            </section>
+
+            <section class="stat-card" aria-labelledby="awaiting-label">
+              <p class="eyebrow" id="awaiting-label">Awaiting review</p>
+              <p class="stat-card__value stat-card__value--xl">
+                <span class="skeleton" id="awaiting-count">0</span>
+              </p>
+              <p class="stat-card__text">Job listings ready for a decision.</p>
+              <a class="link-arrow" href="/admin/moderation">
+                Open queue
+                <svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons/sprite.svg#i-arrow-right" />
+                </svg>
+              </a>
+            </section>
+          </div>
+
+          <ul class="stats">
+            <li class="stat-card">
+              <svg class="icon stat-card__icon" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#i-users" />
+              </svg>
+              <p class="eyebrow">People</p>
+              <p class="stat-card__value">
+                <span class="skeleton" id="stat-people">0</span>
+              </p>
+            </li>
+            <li class="stat-card">
+              <svg class="icon stat-card__icon" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#i-briefcase" />
+              </svg>
+              <p class="eyebrow">Role listings</p>
+              <p class="stat-card__value">
+                <span class="skeleton" id="stat-jobs">0</span>
+              </p>
+            </li>
+            <li class="stat-card">
+              <svg class="icon stat-card__icon" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#i-clipboard-check" />
+              </svg>
+              <p class="eyebrow">Applications</p>
+              <p class="stat-card__value">
+                <span class="skeleton" id="stat-apps">0</span>
+              </p>
+            </li>
+          </ul>
+
+          <section class="panel-card" aria-labelledby="recent-title">
+            <div class="panel-card__head">
+              <div>
+                <p class="eyebrow">Recent submissions</p>
+                <h2 class="panel-card__title" id="recent-title">
+                  Moderation queue
+                </h2>
+              </div>
+              <a class="btn btn--outline btn--sm" href="/admin/moderation"
+                >Review all</a
+              >
+            </div>
+            <div id="recent-list" aria-live="polite">
+              <div class="soft-block">
+                <strong>Loading submissions…</strong>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div class="app-scrim" id="app-scrim"></div>
+
+    <script type="module" src="/js/admin/overview.js"></script>
+  </body>
+</html>
