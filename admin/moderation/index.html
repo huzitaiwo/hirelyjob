@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job moderation — Hirely</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="/assets/icons/hirelyjob.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body class="app">
+    <a class="skip-link" href="#app-main">Skip to content</a>
+    <div class="app-shell">
+      <aside class="app-sidebar" id="app-sidebar"></aside>
+      <div class="app-body">
+        <header class="app-topbar" id="app-topbar"></header>
+
+        <main class="app-main" id="app-main" aria-busy="true">
+          <header class="page-intro">
+            <p class="page-intro__eyebrow">Quality control</p>
+            <h2 class="page-intro__title">
+              Review each role before it goes live.
+            </h2>
+            <p class="page-intro__lead">
+              Approve listings that are clear and candidate-ready, or return
+              them with a concise reason.
+            </p>
+          </header>
+
+          <div class="tabs" role="tablist" aria-label="Moderation status">
+            <button
+              class="tab"
+              role="tab"
+              id="tab-pending"
+              data-status="pending"
+              aria-selected="true"
+              aria-controls="queue"
+            >
+              Pending
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-approved"
+              data-status="approved"
+              aria-selected="false"
+              aria-controls="queue"
+              tabindex="-1"
+            >
+              Approved
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-rejected"
+              data-status="rejected"
+              aria-selected="false"
+              aria-controls="queue"
+              tabindex="-1"
+            >
+              Rejected
+            </button>
+          </div>
+
+          <section
+            class="panel-card"
+            id="queue"
+            role="tabpanel"
+            aria-labelledby="tab-pending"
+            aria-live="polite"
+          ></section>
+        </main>
+      </div>
+    </div>
+    <div class="app-scrim" id="app-scrim"></div>
+
+    <dialog class="modal" id="reject-dialog" aria-labelledby="reject-title">
+      <form method="dialog" id="reject-form" novalidate>
+        <h2 class="modal__title" id="reject-title">Return this role</h2>
+        <p class="modal__text">
+          Give the employer a concise reason so they can fix it and resubmit.
+        </p>
+        <label class="sr-only" for="reject-reason">Reason</label>
+        <textarea
+          id="reject-reason"
+          name="reason"
+          placeholder="For example: The salary range is missing and the responsibilities are too vague."
+          required
+        ></textarea>
+        <p class="modal__error" id="reject-error" role="alert" hidden></p>
+        <div class="modal__actions">
+          <button
+            class="btn btn--outline btn--sm"
+            type="button"
+            id="reject-cancel"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn btn--dark btn--sm"
+            type="submit"
+            id="reject-submit"
+          >
+            Return role
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="/js/admin/moderation.js"></script>
+  </body>
+</html>
