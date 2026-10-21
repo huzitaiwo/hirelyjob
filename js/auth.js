@@ -1,20 +1,22 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import {
-  getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { firebaseConfig } from "./firebase-config.js";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { auth, db, isConfigured } from "./firebase.js";
 
 const btn = document.getElementById("auth-btn");
 const label = document.getElementById("auth-btn-label");
 const errorBox = document.getElementById("auth-error");
 
-const NEXT_URL = "/jobs"; // becomes role-based once the workspaces exist
-
-// Remember which path the visitor chose on the landing page (?role=candidate | employer)
-const role = new URLSearchParams(location.search).get("role");
+const params = new URLSearchParams(location.search);
+const role = params.get("role");
 if (role === "candidate" || role === "employer") {
   try {
     localStorage.setItem("hirely:role", role);
@@ -22,6 +24,11 @@ if (role === "candidate" || role === "employer") {
     /* storage unavailable */
   }
 }
+
+// Only same-site paths are allowed as a post-login destination
+const next = params.get("next");
+const NEXT_URL =
+  next && next.startsWith("/") && !next.startsWith("//") ? next : "/jobs";
 
 const showError = (msg) => {
   errorBox.textContent = msg;
@@ -32,18 +39,32 @@ const clearError = () => {
   errorBox.textContent = "";
 };
 
-const configured = !String(firebaseConfig.apiKey).startsWith("YOUR_");
+async function ensureProfile(user) {
+  const ref = doc(db, "users", user.uid);
+  const snap = await getDoc(ref);
+  if (snap.exists()) return;
+  let chosen = "candidate";
+  try {
+    if (localStorage.getItem("hirely:role") === "employer") chosen = "employer";
+  } catch {
+    /* ignore */
+  }
+  await setDoc(ref, {
+    name: user.displayName || user.email.split("@")[0],
+    email: user.email,
+    role: chosen,
+    createdAt: serverTimestamp(),
+  });
+}
 
-if (!configured) {
+if (!isConfigured) {
   btn.addEventListener("click", () =>
     showError(
       "Sign-in is not connected yet. Add your Firebase config in js/firebase-config.js.",
     ),
   );
 } else {
-  const auth = getAuth(initializeApp(firebaseConfig));
   const provider = new GoogleAuthProvider();
-
   onAuthStateChanged(auth, (user) => {
     if (user) label.textContent = "Continue to Hirely";
   });
@@ -54,11 +75,11 @@ if (!configured) {
       location.href = NEXT_URL;
       return;
     }
-
     btn.setAttribute("aria-busy", "true");
     label.textContent = "Connecting…";
     try {
-      await signInWithPopup(auth, provider);
+      const { user } = await signInWithPopup(auth, provider);
+      await ensureProfile(user);
       location.href = NEXT_URL;
     } catch (err) {
       const messages = {
