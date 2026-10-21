@@ -1,55 +1,9 @@
+import { loadJobs } from "/js/data/jobs-data.js";
 (() => {
   "use strict";
 
-  /* ---------- Data (swap for Firestore later) ---------- */
-  const JOBS = [
-    {
-      id: "aster-field-senior-product-designer",
-      company: "Aster & Field",
-      title: "Senior Product Designer",
-      description:
-        "Shape thoughtful digital tools for people building a better financial life.",
-      mode: "Hybrid",
-      type: "Full-Time",
-      category: "Design",
-      location: "New York, NY",
-      salaryMin: 145000,
-      salaryMax: 170000,
-      posted: "2026-10-12",
-    },
-    {
-      id: "kiteworks-platform-engineer",
-      company: "Kiteworks",
-      title: "Platform Engineer",
-      description:
-        "Build reliable systems that let ambitious teams move with confidence.",
-      mode: "Remote",
-      type: "Full-Time",
-      category: "Engineering",
-      location: "Remote — US",
-      salaryMin: 155000,
-      salaryMax: 190000,
-      posted: "2026-10-10",
-    },
-    {
-      id: "morrow-studio-lifecycle-growth-lead",
-      company: "Morrow Studio",
-      title: "Lifecycle Growth Lead",
-      description:
-        "Make every customer moment clearer, more useful, and more human.",
-      mode: "Hybrid",
-      type: "Full-Time",
-      category: "Marketing",
-      location: "Austin, TX",
-      salaryMin: 125000,
-      salaryMax: 150000,
-      posted: "2026-10-08",
-    },
-  ];
-
-  const fetchJobs = () => Promise.resolve(JOBS);
   const PAGE_SIZE = 6;
-  const DETAIL_URL = (id) => `/job?id=${encodeURIComponent(id)}`; // detail page comes next
+  const DETAIL_URL = (id) => `/job/?id=${encodeURIComponent(id)}`;
 
   /* ---------- Elements ---------- */
   const $ = (id) => document.getElementById(id);
@@ -108,7 +62,9 @@
           job.category,
           job.mode,
           job.type,
-        ].join(" "),
+        ]
+          .filter(Boolean)
+          .join(" "),
       );
       if (
         !norm(state.q)
@@ -278,14 +234,15 @@
 
   /* ---------- Init ---------- */
   readURL();
-  fetchJobs()
-    .then((jobs) => {
+  loadJobs()
+    .then(({ jobs, preview }) => {
       all = jobs;
+      document.getElementById("preview-notice").hidden = !preview;
       render();
     })
     .catch(() => {
       el.grid.innerHTML = `<li><div class="empty-state"><h3 class="empty-state__title">We couldn't load roles</h3>
-        <p class="empty-state__text">Check your connection and try again.</p>
-        <button class="btn btn--dark btn--sm" type="button" onclick="location.reload()">Try again</button></div></li>`;
+      <p class="empty-state__text">Check your connection and try again.</p>
+      <button class="btn btn--dark btn--sm" type="button" onclick="location.reload()">Try again</button></div></li>`;
     });
 })();

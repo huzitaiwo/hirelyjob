@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Role details — Hirely</title>
+    <meta name="description" content="Role details on Hirely." />
+    <link rel="icon" type="image/png" href="/assets/icons/hirelyjob.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/job.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- HEADER (shared component, light variant) -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="logo logo--light" href="/" aria-label="Hirely home">
+          <span class="logo__mark" aria-hidden="true">h.</span>
+          <span class="logo__word">hirely</span>
+        </a>
+        <nav class="site-nav" id="site-menu" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a href="/jobs" aria-current="page">Find work</a></li>
+            <li><a href="/admin">For employers</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__actions">
+          <a class="btn btn--outline btn--sm" href="/join">
+            Get started
+            <svg class="icon" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#i-arrow-right" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container job">
+        <a class="breadcrumb" href="/jobs">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/icons/sprite.svg#i-chevron-left" />
+          </svg>
+          All roles
+        </a>
+        <div id="job-root" aria-live="polite" aria-busy="true">
+          <div class="job__layout">
+            <div class="job__main">
+              <div class="card job__head">
+                <span class="skeleton" style="width: 60%; height: 2.5rem"
+                  >&nbsp;</span
+                >
+              </div>
+              <div class="card job__section">
+                <span class="skeleton" style="width: 100%; height: 6rem"
+                  >&nbsp;</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER (shared component) -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="logo logo--light" href="/" aria-label="Hirely home">
+            <span class="logo__mark" aria-hidden="true">h.</span>
+            <span class="logo__word">hirely</span>
+          </a>
+          <p>Find the right opportunity. Hire the right people.</p>
+        </div>
+        <nav aria-label="Footer">
+          <ul class="site-footer__links">
+            <li><a href="/jobs">Find work</a></li>
+            <li><a href="/admin">For teams</a></li>
+            <li><a href="/#how-it-works">How it works</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script type="module" src="/js/job.js"></script>
+  </body>
+</html>
